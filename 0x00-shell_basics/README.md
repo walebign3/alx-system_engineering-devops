@@ -1,1 +1,1 @@
-The first line shebang and the second line is PWD command
+The first line shebang and the second line is ls command

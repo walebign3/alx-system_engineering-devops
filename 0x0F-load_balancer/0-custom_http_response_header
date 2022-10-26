@@ -3,5 +3,5 @@
 
 sudo apt update
 sudo apt install -y nginx
-sudo sed -i "s/listen \[::\]:80 default_server;/&\n\alx-header X-Served-By $HOSTNAME;/" /etc/nginx/sites-enabled/default
+sudo sed -i '/listen 80;/a \alx_header X-Served-By $HOSTNAME;' /etc/nginx/nginx.conf
 sudo service nginx restart

@@ -5,7 +5,7 @@ digfun () {
  subdomains="$2.$1"
  digline=$(dig "$subdomains" | grep -A1 'ANSWER SECTION:' | awk '{print$4}')
  digip=$(dig "$subdomains" | grep -A1 'ANSWER SECTION:' | awk '{print$5}')
- echo "The subdomain $2 is a "$digline" record and points to "$digip""
+ echo "The subdomain $2 is a"$digline" record and points to"$digip""
 }
 
 if [ "$#" == 1 ]

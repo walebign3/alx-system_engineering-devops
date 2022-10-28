@@ -10,11 +10,11 @@ digfun () {
 
 if [ "$#" == 1 ]
  then
-  digfun "$1" "www"
-  digfun "$1" "lb-01"
-  digfun "$1" "web-01"
-  digfun "$1" "web-02"
+  digfun $1 "www"
+  digfun $1 "lb-01"
+  digfun $1 "web-01"
+  digfun $1 "web-02"
 elif [ "$#" == 2 ]
  then
-  digfun "$1" "$2"
+  digfun $1 $2
 fi

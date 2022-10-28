@@ -2,20 +2,20 @@
 #Bash script that will display information about subdomains
 
 digfun () {
-    subdomains="$2.$1"
-    
-    digline=$(dig "$subdomains" | grep -A1 'ANSWER SECTION:' | awk '{print$4}')
-    digip=$(dig "$subdomains" | grep -A1 'ANSWER SECTION:' | awk '{print$5}')
-    echo "The subdomain $2 is a $digline record and points to $digip" | tr -d '\n'
+ subdomains="$2.$1"
+ digline=$(dig "$subdomains" | grep -A1 'ANSWER SECTION:' | awk '{print$4}')
+ digip=$(dig "$subdomains" | grep -A1 'ANSWER SECTION:' | awk '{print$5}')
+ echo "The subdomain $2 is a $digline record and points to $digip" | tr -d '\n'
+ echo ''
 }
 
 if [ "$#" == 1 ]
 then
-  digfun "$1" "www"
-  digfun "$1" "lb-01"
-  digfun "$1" "web-01"
-  digfun "$1" "web-02"
+ digfun "$1" "www"
+ digfun "$1" "lb-01"
+ digfun "$1" "web-01"
+ digfun "$1" "web-02"
 elif [ "$#" == 2 ]
 then
-  digfun "$1" "$2"
+ digfun "$1" "$2"
 fi

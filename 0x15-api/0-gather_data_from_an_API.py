@@ -23,7 +23,7 @@ if __name__ == "__main__":
         if item.get('completed') is True:
             res = res + 1
 
-    print("{} is done with tasks({}/{}):".format(ename, res, tnot))
+    print("Employee {} is done with tasks({}/{}):".format(ename, res, tnot))
     for item in r_todos_dict:
         if item.get('completed') is True:
             print("\t {}".format(item.get('title')))

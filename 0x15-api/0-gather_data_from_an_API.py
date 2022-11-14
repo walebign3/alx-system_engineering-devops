@@ -6,7 +6,7 @@ import sys
 
 
 if __name__ == "__main__":
-    inp = sys.argv[1]
+    inp = int(sys.argv[1])
     url = 'https://jsonplaceholder.typicode.com/users'
     url2 = 'https://jsonplaceholder.typicode.com/todos'
     payload1 = {'id': inp}

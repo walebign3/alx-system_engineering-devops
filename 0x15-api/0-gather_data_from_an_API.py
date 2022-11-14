@@ -17,14 +17,14 @@ if __name__ == "__main__":
     r_todos = requests.get(url2, params=payload2)
     r_user_dict = r_user.json()
     r_todos_dict = r_todos.json()
-    E_NAME = r_user_dict[0]["name"]
-    T_N_OF_T = len(r_todos_dict)
+    ename = r_user_dict[0]["name"]
+    tnot = len(r_todos_dict)
     res = 0
     for item in r_todos_dict:
         if item.get('completed') is True:
             res = res + 1
-    N_OF_D_T = res
-    print('{} is done with tasks({}/{}):'.format(E_NAME, N_OF_D_T, T_N_OF_T))
+    nofdt = res
+    print('{} is done with tasks({}/{}):'.format(ename, nofdt, tnot))
     for item in r_todos_dict:
         if item.get('completed') is True:
             print('\t {}'.format(item.get('title')))

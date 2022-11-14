@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """Gather data from an API
 """
-
 import requests
 import sys
 
@@ -22,6 +21,7 @@ if __name__ == "__main__":
     for item in r_todos_dict:
         if item.get('completed') is True:
             res = res + 1
+
     nofdt = res
     print('{} is done with tasks({}/{}):'.format(ename, nofdt, tnot))
     for item in r_todos_dict:

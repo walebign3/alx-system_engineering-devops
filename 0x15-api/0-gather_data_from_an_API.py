@@ -1,12 +1,10 @@
 #!/usr/bin/python3
-"""
-Gather data from an API
+"""Gather data from an API
 for a given employee ID, returns
 information about his/her TO list progress.
 """
 import requests
 import sys
-
 
 if __name__ == "__main__":
     inp = int(sys.argv[1])
@@ -25,8 +23,7 @@ if __name__ == "__main__":
         if item.get('completed') is True:
             res = res + 1
 
-    nofdt = res
-    print("{} is done with tasks({}/{}):".format(ename, nofdt, tnot))
+    print("{} is done with tasks({}/{}):".format(ename, res, tnot))
     for item in r_todos_dict:
         if item.get('completed') is True:
             print("\t {}".format(item.get('title')))

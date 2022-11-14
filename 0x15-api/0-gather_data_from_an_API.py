@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-# Python script using this REST API
+"""
+Gather data from an API
+"""
 
 import requests
 import sys

@@ -6,11 +6,11 @@ import sys
 
 
 if __name__ == "__main__":
-    i = sys.argv[1]
+    inp = sys.argv[1]
     url = 'https://jsonplaceholder.typicode.com/users'
     url2 = 'https://jsonplaceholder.typicode.com/todos'
-    payload1 = {'id': i}
-    payload2 = {'userId': i}
+    payload1 = {'id': inp}
+    payload2 = {'userId': inp}
     r_user = requests.get(url, params=payload1)
     r_todos = requests.get(url2, params=payload2)
     r_user_dict = r_user.json()

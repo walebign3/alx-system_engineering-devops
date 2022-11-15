@@ -18,7 +18,7 @@ if __name__ == "__main__":
     r_todos = requests.get(url2, params=payload2)
     r_user_dict = r_user.json()
     r_todos_dict = r_todos.json()
-    uname = r_user_dict[0]["name"]
+    uname = r_user_dict[0]["username"]
 
     with open("{}.csv".format(inp), "w", newline="") as jsonfile:
         writer = csv.writer(jsonfile, quoting=csv.QUOTE_ALL)

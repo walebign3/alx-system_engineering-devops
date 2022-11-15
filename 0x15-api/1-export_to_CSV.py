@@ -22,5 +22,5 @@ if __name__ == "__main__":
 
     with open("{}.csv".format(inp), "w", newline="") as jsonfile:
         writer = csv.writer(jsonfile, quoting=csv.QUOTE_ALL)
-        [writer.writerow([inp, uname, item.get("completed"),
-        item.get("title")]) for item in r_todos_dict]
+        [writer.writerow([inp, uname, item.get("completed"), item.get("title")])
+        for item in r_todos_dict]

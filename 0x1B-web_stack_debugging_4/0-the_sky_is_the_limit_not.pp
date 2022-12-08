@@ -1,5 +1,12 @@
-# Increading worker_process from 1 to auto
-exec { 'increase performance':
-  command => "sed -i 's/worker_processes 1;/worker_processes auto;/g' /etc/nginx/nginx.conf; sudo service nginx restart",
-  path    => ['/bin', '/usr/bin', '/usr/sbin']
+
+# setup Nginx doing under pressure
+exec { 'change setting':
+  command => 'sed -i "s/15/4096/" /etc/default/nginx',
+  path    => '/usr/local/bin/:/bin/'
+} ->
+
+# Restart Nginx
+exec { 'nginx-restart':
+  command => 'nginx restart',
+  path    => '/etc/init.d/'
 }
